@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <title>Resultado de la busqueda por referencia</title>
+</head>
+<body>
+  <header id="header_container" class="header_container"></header>
+  <h1 class="title_web">Registros por referencia</h1>
+
+  <section class="section_data_container">
+    <div class="data_registers">
+      <% data.map( (indice) => { %>
+        <div class="registerSearch">
+          <div class="registerX"><%= indice.id_sale %></div>
+          <div class="registerX"><%= indice.reference %></div>
+          <div class="registerX"><%= indice.description%></div>
+          <div class="registerX"><%= indice.unit_price%></div>
+          <div class="registerX"><%= indice.registered%></div>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+  
+  <footer class="footer_container" id="footer_container"></footer>
+  <script src="/js/index.js"></script>
+  
+</body>
+</html>

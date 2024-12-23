@@ -1,0 +1,120 @@
+.gridSales {
+  display: grid;
+  grid-template-columns: 4% 7% 32% 8% 6% 8% 8% 17% 5% 5%;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.salesDataDate {
+  background-color: var(--colorBlanco);
+  border: 1px solid rgba(241, 236, 236, 0.1);
+  display: grid;
+  grid-template-columns: auto;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.salesDataDate .titles_container {
+  text-align: center;
+}
+
+.salesDataDate .titles_container .title {
+  padding: 0.5em;
+  background-color: var(--colorAzul);
+  color: var(--colorBlanco);
+}
+
+.salesDataDate .data_container {
+  grid-template-rows: auto;
+}
+
+.salesDataDate .data_container .data {
+  display: grid;
+  grid-template-rows: 1.5em;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  padding: 0 .5em;
+}
+
+.salesDataDate .data_container .data:hover {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.salesDataDate .data_container .data .btn-delete {
+  display: grid;
+  margin: 0;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.salesDataDate .data_container .data:hover .btn-delete {
+  background-color: var(--colorRojo);
+  color: white;
+  padding: 1em 1.5em;
+}
+
+.salesDataDate .data_container .data .btn-update {
+  margin: 0;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.salesDataDate .data_container .data:hover .btn-update {
+  background-color: var(--colorAzul);
+  color: white;
+  padding: 1em 1.5em;
+}
+
+.salesDataDate .data_container .registro:hover {
+  background-color: dodgerblue;
+  color: white;
+  padding: 0.2em 0;
+}
+
+.saleError {
+  background-color: var(--colorRojo);
+  color: var(--colorBlanco);
+  padding: 0.5em;
+}
+
+.ancho {
+  font-weight: 900;
+  font-size: 1.2em;
+}
+
+/* Renta kid */
+.contenedor_superRenta{
+  display: flex;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  padding: .2em 1em 0 0;
+  background-color: dodgerblue;
+  color: white;
+  justify-content: left;
+  text-align: left;
+  border-top: 5px solid lime;
+  border-left: 0px solid lime;
+  border-right: 0px solid lime;
+  border-bottom: 0px solid lime;
+  border-radius: 0 100em 0 0;
+}
+.contenedorRenta{
+  text-align: left;
+  justify-content: right;
+  min-width: 1em;
+  padding: 1em;
+}
+.contenedorRenta .formato{
+  text-align: left;
+}

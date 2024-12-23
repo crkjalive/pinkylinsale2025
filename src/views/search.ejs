@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <title> 💎 Referencia en Stock 💎 </title>
+</head>
+<body>
+  <header id="header_container" class="header_container"></header>
+  <h1 class="title_web">Buscar referencia en inventario</h1>
+  
+  <form action="/search/add" method="post">
+    <label for="reference">Ingrese el número de la referencia a registrar</label>
+    <input type="number" autofocus="true" min="0" pattern="^[0-9]+" name="reference" required placeholder="buscar referencia valida en el stock"/>
+    <input type="submit" value="Buscar en stock">
+  </form>
+  
+  <footer id="footer_container" class="footer_container"></footer>
+  <script src="/js/index.js"></script>
+</body>
+</html>

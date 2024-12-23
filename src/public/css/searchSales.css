@@ -1,0 +1,21 @@
+.section_data_container{
+  background-color: dodgerblue;
+  display: block;
+}
+.data_registers{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.registerSearch{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.registerX{
+  text-align: start;
+  padding: .5em;
+  background-color: lime;
+}

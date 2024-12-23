@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <title>⛳ Mensual</title>
+</head>
+
+<body>
+  <header id="header_container" class="header_container"></header>
+
+  <h1 class="title_web">⛳ Total mensual</h1>
+
+  <div class="contenedor_total">
+
+    <% let granTotal=0; let granCosto=0; let granUtilidad=0; %>
+      <% let granCantidad=0; let efectivo=0; let bold=0; %>
+        <%let daviplata=0; let nequi=0; %>
+
+          <% data.map( (indice)=> { %>
+            <div class="mes_total">
+              <div class="mes">
+                <%= indice.mes %>
+              </div>
+              <div class="totalVenta">
+                <%= indice.total %>
+              </div>
+              <div class="totalCosto">
+                <%= indice.costo %>
+              </div>
+              <div class="totalUtilidad">
+                <%= indice.utilidad - 1857000 <=0 ? 0 : indice.utilidad - 1857000 %>
+              </div>
+              <div class="totalUtilidad rent">
+                <%= indice.utilidad %>
+              </div>
+              <div class="totalCantidad prendas2">
+                <%= indice.cantidad %>
+              </div>
+
+              <% granTotal +=indice.total %>
+                <% granCosto +=indice.costo %>
+                  <% granUtilidad+=indice.utilidad%>
+                    <% granCantidad +=indice.cantidad %>
+
+            </div>
+            <% }) %>
+  </div>
+
+  <div class="gran_contenedor">
+    <div class="contenedor_valores">
+      <div class=" valores titles"> Total registros </div>
+      <div class=" valores formato">
+        <%= granTotal %>
+      </div>
+      <div></div>
+    </div>
+    <div class="contenedor_valores">
+      <div class=" valores titles"> Mercancía </div>
+      <div class=" valores formato">
+        <%= granCosto %>
+      </div>
+    </div>
+    <div class="contenedor_valores">
+      <div class=" valores titles"> Utilidad </div>
+      <div class=" valores formato">
+        <%= granUtilidad %>
+      </div>
+    </div>
+    <div class="contenedor_valores">
+      <div class=" valores titles"> Prendas </div>
+      <div class=" valores formato">
+        <%= granCantidad %>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer_container" id="footer_container"></footer>
+
+  <script src="/js/index.js"></script>
+  <script src="/js/aNumeros.js"></script>
+</body>

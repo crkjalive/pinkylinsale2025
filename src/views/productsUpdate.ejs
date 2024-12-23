@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+    <title> 😁 Actualizar producto</title>
+  </head>
+  <body>
+    <header id="header_container" class="header_container"></header>
+    <h1 class="title_web">Actualizar producto 😁 </h1>
+
+    <form action="/products/update/<%= data[0].id_product %>" method="POST">
+      <input type="number" name="id_product" value="<%= data[0].id_product %>" required />
+      <input type="number" name="invoice" value="<%= data[0].invoice %>" required />
+      <input type="number" name="reference" value="<%= data[0].reference %>" required />
+      <input type="text" name="description" value="<%= data[0].description %>" required  />
+      <input type="number" name="stock" value="<%= data[0].stock %>" required />
+      <input type="number" name="addStock" placeholder="Cantidad a agregar al stock" required />
+      <input type="number" name="price" value="<%= data[0].price %>" required />
+      <input type="date" name="created" required />
+      <input type="submit" value="Actualizar datos" />
+    </form>
+
+    <footer class="footer_container" id="footer_container"></footer>
+    
+    <script src="/js/index.js"></script>
+  </body>
+</html>

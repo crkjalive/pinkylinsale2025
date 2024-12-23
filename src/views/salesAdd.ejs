@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+    <title>😀 Registrar venta</title>
+  </head>
+  <body>
+    <header id="header_container" class="header_container"></header>
+    <h1 class="title_web">Referencia no existe pero registra la venta</h1>
+
+    <div class="form_container">
+      <form action="/sales/add" method="POST">
+        <h3 class="saleError"><%= data[0].reference %></h3>
+        <input type="number" name="reference" value="<%= %>" required />
+        <input type="text" name="detail" placeholder="Descripción del producto" required />
+        <input type="number" autofocus name="quantity" placeholder="Cantidad" required />
+        <input type="number" name="sale" placeholder="Precio de venta" required />
+        <input type="number" name="price" style="display: none" value="999" placeholder="price" />
+        <input type="date" name="created" required />
+
+        <select class="selects" name="pay" id="options">
+          <option value="efectivo">Efectivo</option>
+          <option value="bold">Bold</option>
+          <option value="nequiThere">Nequi There</option>
+          <option value="nequiKhriz">Nequi Khriz</option>
+          <option value="daviplataThere">Daviplata There</option>
+          <option value="daviplataKhriz">Daviplata Khriz</option>
+          <option value="separado">Separado</option>
+        </select>
+
+        <input type="submit" value="Registrar venta" />
+      </form>
+    </div>
+
+    <footer class="footer_container" id="footer_container"></footer>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

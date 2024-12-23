@@ -1,0 +1,27 @@
+.footer_container {  
+  display: block;
+  background-color: var(--colorAzul);
+  color: var(--colorBlanco);
+  font-size: 1rem;
+  text-align: right;
+  bottom: 0;
+  width: 100%;
+}
+.footer_container .text1{
+  padding: 1em 2em 0 0;
+}
+.footer_container .text2{
+  padding: 0 2em 1em 0;
+}
+.footer_container .tech_text{
+  font-weight:lighter;
+  font-size: larger;
+  color: var(--colorNaranjaOscuro);
+  background-color: var(--colorBlanco);
+  padding: 1em;
+  text-align: right;
+}
+.footer_container .tech_text img{
+  height: 1.5em;
+  margin-left: 1em;
+}

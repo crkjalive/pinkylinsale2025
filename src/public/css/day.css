@@ -1,0 +1,29 @@
+.contenedor_day{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+}
+.registroDay{
+  background-color: rgb(244, 244, 244);
+  box-shadow: 3px 8px 10px rgb(124, 124, 124);
+  border: 1px solid #e004c3;
+  border-radius: 8px;
+
+  padding: .5em;
+  margin-top: .5em;
+  margin-left: .5em;
+  margin-bottom: .5em;
+  width: 13.7%;
+  text-align: right;
+}
+.valorColor{
+  font-size: 1.4em;
+  padding: .5em ;
+  background-color:rgba(244, 244, 244,.3);
+  border-radius: 8px;
+  font-weight:bold;
+  color: black;
+}
+.prendas{
+  padding: .2em .8em .2em .2em;
+}

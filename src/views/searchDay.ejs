@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <title>Buscar mes</title>
+</head>
+<body>
+  <header id="header_container" class="header_container"></header>
+  <h1 class="title_web">Totales de los registros por día</h1>
+
+  <form action="/day/date" method="post">
+    <input type="date" name="date_start" />
+    <input type="date" name="date_end" />
+    <input type="submit" value="Buscar totales por dia" />
+  </form> 
+  
+  <footer class="footer_container" id="footer_container"></footer>
+  <script src="/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <title>Delete</title>
+</head>
+<body>
+  <h1 class="title_web title_padd">Desea eliminar este registro</h1>
+  <form class="form_eliminar" action="/products/delete/<%= data[0]['id_product'] %>" method="POST">
+    <a href="/products"><div id="confirmacion">Cancelar</div></a>
+    <input id="btm-eliminar" type="submit" value="Sí Eliminar">
+  </form>
+</body>
+</html>

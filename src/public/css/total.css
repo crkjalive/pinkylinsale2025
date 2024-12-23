@@ -1,0 +1,99 @@
+.contenedor_total{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 2fr;
+  background-color: dodgerblue;
+  grid-gap: 1em .5em;
+  margin: 0;
+  padding:1.5em .5em 1em .5em;
+}
+.mes_total{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap ;
+  color: rgb(255, 255, 255);
+  background-color: dodgerblue;
+  border: 2px solid white;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px rgb(255, 255, 255);
+  overflow: hidden;
+
+}
+.mes_total div{
+  width: 100%;
+  display: inline-block;
+}
+.mes_total .mes{
+ background-color: var(--colorAzulOscuro);
+ border-bottom: 1px solid white;
+ font-size: 22px;
+ padding: .5em 0;
+ border-radius: .7em .7em 0 0 ;
+ margin-bottom: .5em;
+}
+.totalUtilidad{
+  background-color: var(--colorVerde);
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  padding: .2em 0;
+  margin-bottom: .5em;
+  margin-top: .5em;
+  box-shadow: 0px 5px 10px rgb(49, 49, 49);
+  transform: rotate(-4deg);
+  display: inline;
+}
+.rent{
+  background-color: dodgerblue;
+  transform: rotate(0deg);
+  color: white;
+  text-align: right;
+  box-shadow: 0px 0px 0px white;
+  padding: 0 .5em;
+  font-size: 16px;
+  width: 80%;
+  margin-top: .5em;
+}
+.totalVenta{
+  font-weight: 600;
+  font-size: 26px;
+}
+.totalCosto{
+  padding: 0;
+  font-size: 15px;
+  margin-bottom: .5em;
+}
+.prendas{
+  text-align: right;
+  padding-right: 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  font-weight: bold;
+  box-shadow: 1px 0px 2px white;
+}
+
+.prendas2{
+  text-align: right;
+  padding-right: .5em;
+  font-size: 1em;
+  font-weight: 600;
+  font-weight: bold;
+  background-color: var(--colorAzulOscuro);
+  box-shadow: 1px 0px 2px white;
+}
+
+/* estilos de gran totales */
+.gran_contenedor{
+  background-color: dodgerblue;
+  display: flex;
+  justify-content: left;
+  padding: 0;
+  color: white;
+}
+.contenedor_valores{
+  margin: .5em 1em;
+}
+.valores{
+  font-size: 1.1rem;
+  border-radius: .5em;
+  margin: 0;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+    <title> 😋 Productos del inventario</title>
+  </head>
+  <body>
+    <header id="header_container" class="header_container"></header>
+    <h1 class="title_web">Agregar factura al inventario</h1>
+
+    <form action="/products/addUpdate" method="POST">
+      <input type="number" name="invoice" value="<%= data[0].invoice %>" placeholder="Número de la factura electrónica" required />
+      <input type="number" name="reference" value="<%= data[0].reference %>" placeholder="Referencia del producto" required />
+      <input type="text" name="description" value="<%= data[0].description %>" placeholder="Descripcion del producto" required />
+      <input type="number" name="stock" value="<%= data[0].stock %>" placeholder="Cantidad a registrar" required />
+      <input type="number" name="price" value="<%= data[0].price %>" placeholder="Precio por unidad" required />
+      <input type="date" name="created" required />
+      <input type="submit" value="Registrar producto" />
+    </form>
+    
+    <footer class="footer_container" id="footer_container"></footer>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

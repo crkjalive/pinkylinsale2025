@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+    <title>🛒 Registro de ventas</title>
+  </head>
+  <body>
+    <header id="header_container" class="header_container"></header>
+    
+    <h1 class="title_web">Registros del día</h1>
+
+    <section class="salesDataDate">
+      <div class="titles_container gridSales">
+        <div class="title">ID</div>
+        <div class="title">Referencia</div>
+        <div class="title">Descripción</div>
+        <div class="title">Pago por</div>
+        <div class="title">Cantidad</div>
+        <div class="title">Precio venta</div>
+        <div class="title">Total</div>
+        <div class="title">Fecha</div>
+        <div class="title">Edit</div>
+        <div class="title">Delete</div>
+      </div>
+      <div class="data_container ">
+
+        <% let stoky = 0; %> 
+        <% let nequiKhriz = 0; %> 
+        <% let nequiThere = 0; %>
+        <% let daviplataKhriz = 0; %>
+        <% let daviplataThere=0; %>
+        <% let boldTotal = 0; %>
+        <% let efectivoTotal = 0; %>
+        <% let totales = 0; %>
+
+        <% sales.map( indice => { %>
+          <div class="registro gridSales">
+            <div class="data"><%= indice.id_sale %></div>
+            <div class="data"><%= indice.reference %></div>
+            <div class="data"><%= indice.description %></div>
+            <div class="data"><%= indice.payment_method %></div>
+            <div class="data"><%= indice.quantity %></div>
+            <div class="data"><%= indice.unit_price %></div>
+            <% stoky = indice.quantity %>
+            <div class="data"><%= indice.quantity * indice.unit_price %></div>
+            <div class="data"><%= indice.registered.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) %></div>
+            <div class="data">
+              <a class="btn-update" href="/sales/update/<%= indice.id_sale %>">
+                Up
+              </a>
+            </div>
+            <div class="data">
+              <a class="btn-delete" href="/sales/delete/<%= indice.id_sale %>">
+                Del
+              </a>
+            </div>
+          </div>
+
+        <% if (indice.payment_method == 'NEQUITHERE') { %>
+          <% nequiThere += indice.quantity * indice.unit_price %>
+
+        <% } else if (indice.payment_method == 'DAVIPLATATHERE') { %>
+          <% daviplataThere += indice.quantity * indice.unit_price %>
+
+        <% } else if (indice.payment_method == 'NEQUIKHRIZ') { %>
+          <% nequiKhriz += indice.quantity * indice.unit_price %>
+
+        <% } else if (indice.payment_method == 'DAVIPLATAKHRIZ') { %>
+          <% daviplataKhriz += indice.quantity * indice.unit_price %>
+            
+        <% } else if (indice.payment_method == 'BOLD') { %>
+          <% boldTotal += indice.quantity * indice.unit_price %>
+
+        <% } else if (indice.payment_method == 'EFECTIVO') { %>
+          <% efectivoTotal += indice.quantity * indice.unit_price %>
+        <% } %>
+
+        <% totales += indice.quantity * indice.unit_price }) %>
+
+      </div>
+    </section>
+    
+    <div class="contenedor_superRenta">
+
+        <div class="contenedorRenta">Total: 
+          <div class="formato"><%= totales %></div>
+        </div>
+
+        <div class="contenedorRenta">Efectivo: 
+          <div class="formato"><%= efectivoTotal %></div>
+        </div>
+
+        <div class="contenedorRenta">Renta There: 
+          <div class="formato" style="padding: 2px; border-radius: 15px; padding: 0 1em; text-align: center; 
+          border: 1px solid white; color: white; font-weight: bold;">
+            <%= nequiThere + daviplataThere %></div>
+        </div>
+        
+        <div class="contenedorRenta">Nequi There: 
+          <div class="formato"><%= nequiThere %></div>
+        </div>
+
+        <div class="contenedorRenta">Daviplata There: 
+          <div class="formato"><%= daviplataThere %></div>
+        </div>
+        
+        <div class="contenedorRenta">Renta Khriz: 
+          <div class="formato" style="padding: 2px; border-radius: 15px; padding: 0 1em; text-align: center; 
+          border: 1px solid white; color: white; font-weight: bold;">
+            <%= nequiKhriz + daviplataKhriz + boldTotal %>
+          </div>
+        </div>
+        
+        <div class="contenedorRenta">Nequi Khriz: 
+          <div class="formato"><%= nequiKhriz %></div>
+        </div>
+        
+        <div class="contenedorRenta">Daviplata Khriz: 
+          <div class="formato"><%= daviplataKhriz %></div>
+        </div>
+        
+        <div class="contenedorRenta">Bold: 
+          <div class="formato"><%= boldTotal %></div>
+        </div>
+
+      </div>
+        
+      <footer class="footer_container" id="footer_container"></footer>
+      
+    <script src="/js/index.js"></script>
+    <script src="/js/aNumeros.js"></script>
+  </body>
+</html>

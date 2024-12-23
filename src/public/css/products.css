@@ -1,0 +1,74 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.gridProducts{
+  display: grid;
+  grid-template-columns: 6% 6% 6% 30% 8% 8% 8% 18% 5% 5%;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-content: center;
+}
+.gridProducts:hover{
+  background-color: dodgerblue;
+  color: white;
+  font-size: 1.2em;
+}
+.stockSales{
+  display: grid;
+  grid-template-columns: 10% 10% 40% 10% 10% 10% 10%;
+  justify-content: center;
+  align-content: center;
+}
+.stockSales:hover{
+  background-color: dodgerblue;
+  color: white;
+  font-size: 1.1em;
+  padding: .2em 0;
+}
+
+.productsDataDate{
+  background-color: var(--colorBlanco);
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+}
+.productsDataDate .titles_container{
+  text-align: center;
+}
+.productsDataDate .titles_container .title{
+  padding: .5em;
+  background-color: var(--colorAzul);
+  color: var(--colorBlanco);
+}
+.productsDataDate .data_container{
+  grid-template-rows: auto;
+}
+.productsDataDate .data_container .data{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center ;
+  
+}
+.productsDataDate .data_container .data .btn-delete{
+  margin: 0;
+  color: var(--colorBlanco);
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--colorRojo);
+  width: 100%;
+}
+.productsDataDate .data_container .data .btn-update{
+  margin: 0;
+  color: var(--colorBlanco);
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--colorAzul);
+  width: 100%;
+  font-family: "arial";
+}
+.productsDataDate .data_container .data .btn-update:hover{
+  padding: .5em 0;
+}
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <title>Search Data</title>
+</head>
+<body>
+  <header id="header_container" class="header_container"></header>
+  <h1 class="title_web">Referencia en stock</h1>
+  
+  <form action="/sales/add" method="POST">
+    <input type="number" style="display: none;" name="id_product" value="<%= data[0].id_product %>" />
+    <input type="number" name="reference" value="<%= data[0].reference %>" />
+    <input type="text" name="description" value="<%= data[0].description %>" />
+    <input type="number" autofocus="true" name="quantity" value="" placeholder="Cantidad a registrar" required />
+    <input type="number" name="unit_price" value="" placeholder="Precio de venta" required />
+    <input type="date" name="registered" required />
+
+    <select class="selects" name="payment_method" id="options">
+      <option value="efectivo">Efectivo</option>
+      <option value="nequiThere">Nequi There</option>
+      <option value="nequiKhriz">Nequi Khriz</option>
+      <option value="daviplataThere">Daviplata There</option>
+      <option value="daviplataKhriz">Daviplata Khriz</option>
+      <option value="bold">Bold</option>
+      <option value="separado">Separado</option>
+    </select>
+    
+    <input type="submit" value="Registrar venta" />
+  </form>
+
+  <footer class="footer_container" id="footer_container"></footer>
+  <script src="/js/index.js"></script>
+</body>
+</html>

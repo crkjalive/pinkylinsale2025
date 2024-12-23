@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <title>Search separados</title>
+</head>
+<body>
+  <header id="header_container" class="header_container"></header>
+
+  <h1 class="title_web">Separados</h1>
+
+  <section class="salesDataDate">
+    <div class="titles_container gridSalesSeparado">
+      <div class="title">ID Sale</div>
+      <div class="title">Referencia</div>
+      <div class="title">Descripción</div>
+      <div class="title">Cantidad</div>
+      <div class="title">Costo</div>
+      <div class="title">Precio</div>
+      <div class="title">Separado</div>
+      <div class="title">Fecha</div>
+    </div>
+
+  <div class="data_container gridSalesSeparado">
+  <% data.map( separado => { %>
+    <div class="data"><%= separado.id_sale %></div>
+    <div class="data"><%= separado.reference %></div>
+    <div class="data"><%= separado.description %></div>
+    <div class="data"><%= separado.quantity %></div>
+    <div class="data"><%= separado.price %></div>
+    <div class="data"><%= separado.unit_price %></div>
+    <div class="data"><%= separado.payment_method %></div>
+    <div class="data"><%= separado.registered.toLocaleDateString() %></div>
+    <% }) %>
+    
+  </div>
+  </section>
+
+  <footer class="footer_container" id="footer_container"></footer>
+    
+  <script src="/js/index.js"></script>
+</body>
+</html>

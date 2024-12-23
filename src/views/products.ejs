@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <title>🛸 Referencias en Stock</title>
+</head>
+
+<body>
+  <header id="header_container" class="header_container"></header>
+  <h1 class="title_web">Inventario total 😎 </h1>
+  <h3 style="text-align: right; color: rgb(248, 32, 32); padding: .5em 0 0 0; padding-right: 1em;">Buscar con Control +
+    efe 🤣🤣🤣</h3>
+  <% let ids=0 %>
+
+    <section class="productsDataDate">
+      <div class="titles_container gridProducts">
+        <div class="title">ID</div>
+        <div class="title">Factura</div>
+        <div class="title">Referencia</div>
+        <div class="title">Descripcion</div>
+        <div class="title">Cantidad</div>
+        <div class="title">Precio</div>
+        <div class="title">Total</div>
+        <div class="title">Fecha</div>
+        <div class="title">Edit</div>
+        <div class="title">Delete</div>
+      </div>
+      <div class="data_container ">
+        <% products.map( indice=> { %>
+          <div class="gridProducts">
+            <div class="data">
+              <%= indice.id_product %>
+            </div>
+            <% ids +=1%>
+              <div class="data">
+                <%= indice.invoice %>
+              </div>
+              <div class="data">
+                <%= indice.reference %>
+              </div>
+              <div class="data">
+                <%= indice.description %>
+              </div>
+              <div class="data">
+                <%= indice.stock %>
+              </div>
+              <div class="data">
+                <%= indice.price %>
+              </div>
+              <div class="data">
+                <%= indice.total %>
+              </div>
+              <div class="data">
+                <%= indice.created.toLocaleString('en-us', { weekday:"long", year:"numeric", month:"short",
+                  day:"numeric"}) %>
+              </div>
+
+              <div class="data">
+                <a class="btn-update" href="/products/update/<%= indice.id_product %>">Up</a>
+              </div>
+
+              <div class="data">
+                <a class="btn-delete" href="/products/delete/<%= indice.id_product %>">Del</a>
+              </div>
+          </div>
+
+          <% }) %>
+      </div>
+    </section>
+
+    <footer class="footer_container" id="footer_container"></footer>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

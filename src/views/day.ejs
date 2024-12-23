@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="shortcut icon" href="/ico/ico.ico" type="image/x-icon">
+  <title>🏈 Total por día</title>
+  <style>
+    .forma {
+      font-weight: bold;
+      width: 70%;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header_container" class="header_container"></header>
+  <h1 class="title_web">🏈 Totales por día</h1>
+
+  <section>
+    <div class="contenedor_day">
+
+      <% let totales=0; let utilidades=0; let dato=0;%>
+
+        <% data.map( (data)=> { %>
+          <div class="registroDay">
+
+            <div class="fecha">
+              <%= data.registered.toLocaleDateString('en-us', { weekday:"short", year:"numeric", month:"short",
+                day:"numeric"}) %>
+            </div>
+
+            <div class="prendas">
+              <span>
+                <%= data.prendas==0 ? data.description + ' ' : 'STOCK SOLD ' %>
+              </span>
+              <%= data.prendas !=0 ? data.prendas : '' %>
+            </div>
+            <div class="valorColor totalVenta">
+              <%= data.total %>
+            </div>
+            <div style="display: none;" class="utilidadColor totalVenta">
+              <%= data.utilidad %>
+            </div>
+          </div>
+
+          <% totales +=data.total %>
+            <% utilidades +=data.utilidad %>
+
+              <% }) %>
+    </div>
+
+  </section>
+
+  <div style="display: flex; margin: .5em 1em;color: dodgerblue;">
+    <h3>Datos por rango de color</h3>
+  </div>
+  <section
+    style="display: flex; justify-content: space-between; margin: 1em 1em; border: 1px solid dodgerblue; border-radius: .5em; max-width: 70%;">
+
+
+    <div class=""
+      style="background-color: dodgerblue; color: rgb(255, 255, 255); justify-self: flex-start;padding: .5em 1em; border-radius: .5em;">
+      <p class="forma">DodgerBlue</p>
+      <div class="valorColor totalVenta" id="significadoColor"></div>
+    </div>
+
+    <div class=""
+      style="background-color: rgb(30, 107, 255); color: rgb(255, 255, 255); justify-self: flex-start;padding: .5em 1em; border-radius: .5em;">
+      <p class="forma">BlueDark</p>
+      <div class="valorColor totalVenta" id="coloruno"></div>
+    </div>
+
+    <div class=""
+      style="background-color: lime; color: black; justify-self: flex-start;padding: .5em 1em; border-radius: .5em;">
+      <p class="forma">Lime</p>
+      <div class="valorColor totalVenta" id="colordos"></div>
+    </div>
+
+    <div class=""
+      style="background-color: deeppink; color: white; justify-self: flex-start;padding: .5em 1em; border-radius: .5em;">
+      <p class="forma">DeepPink</p>
+      <div class="valorColor totalVenta" id="colortre"></div>
+    </div>
+
+    <div class=""
+      style="background-color: gold; color: black; justify-self: flex-start;padding: .5em 1em; border-radius: .5em;">
+      <p class="forma">Gold</p>
+      <div class="valorColor totalVenta" id="colorcua"></div>
+    </div>
+
+    <div class=""
+      style="background-color: yellow; color: rgb(0, 0, 0); justify-self: flex-start;padding: .5em 1em; border-radius: .5em;">
+      <p class="forma">YellowRent</p>
+      <div class=" valorColor totalVenta">
+        <%= utilidades - 1857000 %>
+      </div>
+    </div>
+
+    <div class=""
+      style="background-color: rgb(159, 241, 35); color: black; justify-self: flex-start;padding: .5em 1em; border-radius: .5em;">
+      <p class="forma">GreenYellow</p>
+      <div class=" valorColor totalVenta">
+        <%= utilidades%>
+      </div>
+    </div>
+
+
+
+    <div class=""
+      style="background-color: rgb(255, 136, 0); color: rgb(255, 255, 255); justify-self: flex-start;padding: .5em 1em; border-radius: .5em;">
+      <p class="forma">FullMounth</p>
+      <div class="valorColor totalVenta">
+        <%= totales %>
+      </div>
+    </div>
+
+  </section>
+
+
+  <footer class="footer_container" id="footer_container"></footer>
+  <script src="/js/formulaColor.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/aNumeros.js"></script>
+</body>
+
+</html>
