@@ -1,7 +1,7 @@
 // console.log("Hola Mundo Express")
 const express = require("express")
 const app = express()
-const port = process.env.PORT || 3024
+const port = process.env.PORT || 3025
 const path = require("path")
 const connection = require("./connection.js")
 
@@ -16,7 +16,7 @@ const day = require("./routes/dayRoutes.js")
 
 // Settings
 app.set("title", "Aplicacion hecha en Node.Js") // title console
-app.set("port", 3024) // puerto
+app.set("port", port) // puerto
 app.set("view engine", "ejs") // motor de plantilla
 app.set("views", path.join(__dirname, "views")) // path de vistas
 
