@@ -1,6 +1,6 @@
 
 const parametros = {
-	anio: 2024,
+	anio: 2025,
 }
 
 console.log(`%cNodeJS ${parametros.anio}`, "font-size:2rem; color:lime;");
