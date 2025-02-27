@@ -45,6 +45,25 @@ CREATE TABLE `products` (
   `created` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE TABLE `products` (
+    `id_product` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `invoice` INT UNSIGNED DEFAULT NULL,
+    `reference` VARCHAR(50) NOT NULL,
+    `description` TEXT DEFAULT NULL,
+    `size32` TINYINT UNSIGNED DEFAULT NULL,
+    `size34` TINYINT UNSIGNED DEFAULT NULL,
+    `size36` TINYINT UNSIGNED DEFAULT NULL,
+    `size38` TINYINT UNSIGNED DEFAULT NULL,
+    `size` VARCHAR(20) DEFAULT NULL,
+    `stock` INT UNSIGNED NOT NULL,
+    `price` DECIMAL(10, 2) NOT NULL,
+    `total` DECIMAL(10, 2) NOT NULL,
+    `category` VARCHAR(50) DEFAULT NULL,
+    `brand` VARCHAR(60) DEFAULT NULL,
+    `created` DATETIME DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
 --
 -- Volcado de datos para la tabla `products`
 --
@@ -70,6 +89,19 @@ CREATE TABLE `sales` (
   `payment_method` varchar(20) NOT NULL,
   `registered` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+CREATE TABLE `sales` (
+    `id_sale` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `id_product` INT UNSIGNED NOT NULL,
+    `quantity` INT UNSIGNED NOT NULL,
+    `unit_price` DECIMAL(10, 2) NOT NULL,
+    `total_price` DECIMAL(10, 2) NOT NULL,
+    `payment_method` VARCHAR(20) NOT NULL,
+    `registered` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`id_product`) REFERENCES `products`(`id_product`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 --
 -- Volcado de datos para la tabla `sales`

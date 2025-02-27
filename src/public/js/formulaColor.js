@@ -1,4 +1,5 @@
 let valorColor = document.querySelectorAll(".valorColor");
+
 let utilidadColor = document.querySelectorAll(".utilidadColor");
 let significadoColor = document.querySelector("#significadoColor");
 let colorUno = document.querySelector("#coloruno");

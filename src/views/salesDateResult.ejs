@@ -47,10 +47,10 @@
           <div class="data"><%= indice.reference %></div>
           <div class="data"><%= indice.description %></div>
           <div class="data"><%= indice.cantidad_total %></div>
-          <div class="data"><%= indice.price %></div>
-          <div class="data"><%= indice.costo_total %></div>
-          <div class="data"><%= indice.venta_total %></div>
-          <div class="data"><strong><%= indice.utilidad_total %></strong></div>
+          <div class="data mil"><%= indice.price %></div>
+          <div class="data mil"><%= indice.costo_total %></div>
+          <div class="data mil"><%= indice.venta_total %></div>
+          <div class="data mil"><strong><%= indice.utilidad_total %></strong></div>
           <div class="data"><%= indice.registered.toDateString() %></div>
 
           <% conteo += indice.conteo %> <% costo += indice.costo_total %> <%
@@ -91,5 +91,6 @@
     <footer class="footer_container" id="footer_container"></footer>
     <script src="/js/index.js"></script>
     <script src="/js/format.js"></script>
+    <script src="/js/mil.js"></script>
   </body>
 </html>

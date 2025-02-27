@@ -39,10 +39,10 @@
   display: inline;
 }
 .nav_container ul .primario {
-  background-color: deeppink;
+  background-color: lime;
   font-size: 1.1rem;
-  color: white;
-  font-weight:500;
+  color: black;
+  font-weight:600;
 }
 .nav_container ul .primario:hover {
   color: var(--colorBlanco);

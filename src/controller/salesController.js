@@ -8,7 +8,7 @@ const getSales = (req, res) => {
   const sql = `SELECT id_product, id_sale, quantity, unit_price, total_price, payment_method, 
   registered, invoice, reference, description, stock, price, total, created
   FROM sales NATURAL JOIN products 
-  ORDER BY registered DESC, id_sale DESC, reference ASC;`
+  ORDER BY registered DESC, id_sale DESC, reference ASC limit 25;`
 
   /* limit 400, pero no me muestra completo renta anual */
 

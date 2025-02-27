@@ -2,16 +2,11 @@ const connection = require("../connection");
 
 const getTotal = (req, res) => {
 
-  let nequi = 0;
-  let daviplata = 0;
-  let bold = 0;
-  let efectivo = 0;
-
-  const sql = `SELECT *, 
-  sum(quantity) AS cantidad, 
-  sum(total_price) AS total, 
-  sum((total_price) - (products.price * sales.quantity)) as utilidad,
-  sum(quantity * price) as costo,
+  const sql = `SELECT 
+  sum(sales.quantity) AS cantidad,
+  sum(sales.quantity * sales.unit_price) AS total,
+  sum(sales.quantity * products.price) AS costo,
+  sum((sales.quantity * sales.unit_price) - (sales.quantity *products.price)) as utilidad,
   MONTHNAME(registered) AS mes 
   FROM sales NATURAL join products 
   GROUP BY mes ORDER BY registered`

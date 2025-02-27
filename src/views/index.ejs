@@ -12,16 +12,72 @@
 
 <body>
   <header id="header_container" class="header_container"></header>
+
   <h1 class="title_web">Pinkylin2020</h1>
+
+  <section class="renta_nav_container">
+
+    <% let THERE=0; let KHRIZ=0; let TOTAL=0; %>
+
+    <div class="renta_nav_data">
+      <% data.map( indice => { %>
+        
+        <div style="padding: .5em;">
+
+          <div style="text-transform: lowercase;">
+            <%= indice.payment_method %>
+          </div>
+
+          <div class="mil">
+            <%= indice.total_sales %>
+          </div>
+
+        </div>
+
+        <% if (indice.payment_method=='NEQUITHERE' || indice.payment_method=='DAVIPLATATHERE' || indice.payment_method == 'BANCOLOMBIA' ) { %>
+          <% THERE += indice.total_sales %>
+        <% } %>
+          
+        <% if (indice.payment_method=='NEQUIKHRIZ' || indice.payment_method=='DAVIPLATAKHRIZ' || indice.payment_method=='BOLD' ) { %>
+          <% KHRIZ += indice.total_sales %>
+        <% } %>
+
+        <% if (indice.payment_method != 'SEPARADO') { %>
+          <% TOTAL += indice.total_sales %>
+        <% } %>
+      <% }) %>
+
+    </div>
+
+    <div class="renta_nav_total">
+
+      <div style="border: 1px solid white; width: 30%; padding: .5em; border-radius: 5em;"> Renta There
+        <div class="mil"> <%= THERE %> </div>
+      </div>
+
+      <div style="border: 1px solid white; width: 30%; padding: .5em; border-radius: 5em;"> Renta Khriz
+        <div class="mil"> <%= KHRIZ %> </div>
+      </div>
+
+      <div style="border: 1px solid white; width: 30%; padding: .5em; border-radius: 5em;"> Total 
+        <div class="mil"> <%= TOTAL %> </div>
+      </div>
+    </div>
+
+  </section>
+
   <section class="section_container">
     <article class="articles letra">App POS registro de ventas</article>
     <article class="articles letra">
       <h3><a target="_blank" href="https://instagram.com/pinkylin2020">Instagram</a></h3>
-      <h3><a target="_blank" href="https://web.whatsapp.com">Whatsapp</a></h3>
+      <h3><a target="_blank" href="htt= ps://web.whatsapp.com">Whatsapp</a></h3>
     </article>
     <article class="articles letra">App Control de inventario</article>
   </section>
+
   <footer class="footer_container" id="footer_container"></footer>
+
+  <script src="/js/mil.js"></script>
   <script src="/js/index.js"></script>
 </body>
 

@@ -1,0 +1,29 @@
+.renta_nav_container {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    background-color: dodgerblue;
+    align-items: center;
+    color: white;
+    border-top: 3px solid lime;
+    border-bottom: 3px solid lime;
+    border-radius: 0 10em 10em 0;
+    overflow: hidden;
+    margin: 1em 0;
+}
+
+.renta_nav_data {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.renta_nav_total{
+    display: flex;
+    justify-content: space-around;
+    background-color: dodgerblue;
+    padding: 1em;
+    width: 40%;
+    color: white;
+    align-items: center;
+}

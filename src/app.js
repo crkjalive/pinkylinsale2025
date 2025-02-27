@@ -27,8 +27,34 @@ app.use(express.urlencoded({ extended: false }))
 
 // Routes
 app.get("/", (req, res) => {
-  res.render("index")
+
+    const sql = `
+        SELECT 
+            payment_method, 
+            SUM(quantity) AS total_quantity, 
+            SUM(total_price) AS total_sales,
+            COUNT(id_sale) AS number_of_sales
+        FROM 
+            sales 
+        NATURAL JOIN 
+            products 
+        GROUP BY 
+            payment_method
+        ORDER BY 
+            total_sales DESC;
+`;
+  
+  connection.query(sql, (err, result) => {
+    if (err) { console.log("Error en la consulta: " + err); }
+    else {
+      // res.send(result) 
+      // console.log(result)
+      res.render("index", { data: result });
+    }
+  });
 })
+
+
 // Routes + controller
 app.use('/sales', sales)
 app.use('/products', products)

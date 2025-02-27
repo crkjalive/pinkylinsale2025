@@ -14,6 +14,7 @@ header.innerHTML = `
 
 <nav class="nav_container">
 	<ul>
+		<a href="/"><li>DIAN</li></a>
 		<a href="/total"><li>🌈Mounts</li></a>
 		<a href="/day"><li>🎭Days</li></a>
 		<a href="/search" class="primario"><li>REGISTER</li></a>
@@ -23,6 +24,7 @@ header.innerHTML = `
 		<a href="/products"><li>🏐Code</li></a>
 		<a href="/products/stock"><li>🎱Stock</li></a>
 		<a href="/products/searchStock"><li>🍑🍌</li></a>
+
 	</ul>
 </nav>
 `;
