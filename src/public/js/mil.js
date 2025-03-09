@@ -1,3 +1,5 @@
+const renta2025 = 49799*1400
+
 const mil = document.querySelectorAll(".mil")
 
 let iteracion = 0

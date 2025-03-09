@@ -18,13 +18,12 @@ const searchSales = (req, res) => {
         res.send('No ahí datos')
       } else {
         // console.log(result)
-        // res.send(result)
-        res.render('searchSalesResults', {data: result})
+        res.send(result)
+        // res.render('searchSalesResults', { data: result })
       }
     }
   })
 }
-
 
 module.exports = {
   getSearchSales,

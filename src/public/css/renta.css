@@ -9,7 +9,7 @@
     border-bottom: 3px solid lime;
     border-radius: 0 10em 10em 0;
     overflow: hidden;
-    margin: 1em 0;
+    margin: 4em 0 2em 0;
 }
 
 .renta_nav_data {
@@ -26,4 +26,23 @@
     width: 40%;
     color: white;
     align-items: center;
+}
+.renta{
+    border: 1px solid white;
+    width: 30%;
+    padding: .5em;
+    border-radius: 5em;
+    font-weight: bold;
+    background-color: rgb(189, 6, 6);
+}
+
+.deep{
+    background-color: deeppink;
+}
+.lime{
+    background-color: lime;
+    color: black;
+}
+.dodger{
+    background-color: dodgerblue;
 }
