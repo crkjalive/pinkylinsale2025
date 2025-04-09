@@ -13,11 +13,11 @@
 <body>
   <header id="header_container" class="header_container"></header>
 
-  <h1 class="title_web">Pinkylin2020</h1>
+  <h1 class="title_web" ><a target="blank_" href="https://www.instagram.com/pinkylin2020/">@Pinkylin2020</a></h1>
 
   <section class="renta_nav_container">
 
-    <% let THERE=0; let KHRIZ=0; let TOTAL=0; let renta = 65000000 %>
+    <% let THERE=0; let KHRIZ=0; let TOTAL=0; let renta = 66000000 %>
 
     <div class="renta_nav_data">
       <% data.map( indice => { %>
@@ -28,7 +28,7 @@
             <%= indice.payment_method %>
           </div>
 
-          <div class="mil">
+          <div class="mil pesos2">
             <%= indice.total_sales %>
           </div>
 
@@ -53,26 +53,30 @@
 
       <% if (THERE < renta) { %> 
        <div class="renta deep"> Renta There
-          <div class="mil"> <%= THERE %> </div>
+          <div class="mil pesos2"> <%= THERE %> </div>
+          <div class="mil pesos2"> <%= -1 * (THERE - renta) %> </div>
         </div>
       <% } else { %>
         <div class="renta"> Renta There
-          <div class="mil"> <%= THERE %> </div>
+          <div class="mil pesos2"> <%= THERE %> </div>
         </div>
       <%}%>
         
       <% if (KHRIZ < renta) { %> 
         <div class="renta lime"> Renta Khriz
-          <div class="mil"> <%= KHRIZ %> </div>
+          <div class="mil pesos2"> <%= KHRIZ %> </div>
+          <div class="mil pesos2"> <%= -1 * (KHRIZ - renta) %> </div>
         </div>
       <% } else { %>
         <div class="renta"> Renta Khriz
-          <div class="mil"> <%= KHRIZ %> </div>
+          <div class="mil pesos2"> <%= KHRIZ %> </div>
         </div>
       <%}%>
 
-      <div class="renta dodger"> Total 
-        <div class="mil"> <%= TOTAL %> </div>
+      <div class="renta dodger" >
+        <div class="mil pesos2" > <%= TOTAL %> </div>
+        <div class="mil pesos2" > <%= renta %> </div>
+        <div class="mil pesos2" > <%= 69718600 %> </div>
       </div>
     </div>
 

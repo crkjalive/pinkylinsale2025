@@ -33,11 +33,13 @@
     padding: .5em;
     border-radius: 5em;
     font-weight: bold;
-    background-color: rgb(189, 6, 6);
+    background-color: rgb(29, 29, 29);
+    color: yellow;
 }
 
 .deep{
     background-color: deeppink;
+    color: white;
 }
 .lime{
     background-color: lime;
@@ -45,4 +47,5 @@
 }
 .dodger{
     background-color: dodgerblue;
+    color: white;
 }

@@ -15,25 +15,11 @@ const dos = 3.755
 const tre = 6.711
 const cua = 8.937
 
-
-significadoColor.innerHTML = `
-  <div>${puntoEquilibrio}</div>
-`
-
-colorUno.innerHTML = `
-  <div>${uno}</div>
-`
-
-colorDos.innerHTML = `
-<div>${dos}</div>
-`
-
-colorTre.innerHTML = `
-<div>${tre}</div>
-`
-colorCua.innerHTML = `
-<div>${cua}</div>
-`
+significadoColor.innerHTML = `<div>${puntoEquilibrio}</div>`
+colorUno.innerHTML = `<div>${uno}</div>`
+colorDos.innerHTML = `<div>${dos}</div>`
+colorTre.innerHTML = `<div>${tre}</div>`
+colorCua.innerHTML = `<div>${cua}</div>`
 
 for (let i = 0; i < utilidadColor.length; i++) {
   if (utilidadColor[i].textContent <= 1) {

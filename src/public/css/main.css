@@ -47,6 +47,16 @@ section{
 div{
   text-align: center;
 }
+.formularioMonth{
+  display: flex;
+  padding: 0;
+  cursor: pointer;
+}
+.formularioMonth input[type='submit']{
+  border: 0;
+  border-radius: 0;
+}
+
 form {
   max-width: 500px;
   width: 100%;
@@ -215,4 +225,17 @@ h2 {
 }
 .justifi{
   justify-content: space-between;
+}
+
+.pesos::before{
+  content: '$';
+  display: inline;
+  position: absolute;
+  padding-left: 1.5em;
+}
+
+.pesos2::before{
+  content: '$ ';
+  display: inline;
+  color: rgb(2, 86, 196);
 }

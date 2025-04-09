@@ -12,12 +12,24 @@
   <header id="header_container" class="header_container"></header>
   <h1 class="title_web">Totales de los registros por día</h1>
 
-  <form action="/day/date" method="post">
-    <input type="date" name="date_start" />
-    <input type="date" name="date_end" />
-    <input type="submit" value="Buscar totales por dia" />
-  </form> 
-  
+  <form class="formularioMonth" action="/day/date" method="post">
+    <select class="selects" name="searchMonth" id="">
+      <option value="enero">Enero</option>
+      <option value="febrero">Febrero</option>
+      <option value="marzo">Marzo</option>
+      <option selected value="abril">Abril</option>
+      <option value="mayo">Mayo</option>
+      <option value="junio">Junio</option>
+      <option value="julio">Julio</option>
+      <option value="agosto">Agosto</option>
+      <option value="septiembre">Septiembre</option>
+      <option value="octubre">Octubre</option>
+      <option value="noviembre">Noviembre</option>
+      <option value="diciembre">Diciembre</option>
+    </select>
+    <input type="submit" value="Registros del mes">
+  </form>
+ 
   <footer class="footer_container" id="footer_container"></footer>
   <script src="/js/index.js"></script>
 </body>
