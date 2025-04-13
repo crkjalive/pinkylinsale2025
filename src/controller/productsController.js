@@ -1,12 +1,22 @@
 const connection = require("../connection")
 
 const getProducts = (req, res) => {
-  const sql = `SELECT id_product, invoice, reference, description, stock, FORMAT(round(price ,0) ,0) as price, FORMAT(round(stock * price, 0), 0) as total, created 
-  FROM products ORDER BY (reference + 1)`
+
+  const sql = `SELECT 
+  id_product, 
+  invoice, 
+  reference, 
+  description, 
+  stock, 
+  FORMAT(round(price ,0) ,0) as price, 
+  FORMAT(round(stock * price, 0), 0) as total, created 
+  FROM products 
+  ORDER BY (reference + 1)`
+  
   connection.query(sql, (err, result) => {
     if (err) { console.log("Error en la consulta: " + err) }
-    else { 
-      res.render("products", { products: result }) 
+    else {
+      res.render("products", { products: result })
     }
   })
 }
@@ -38,13 +48,31 @@ const getSearchStock = (req, res) => {
 
 const getStock = (req, res) => {
 
-  const sql = `SELECT products.id_product, products.reference, products.description,FORMAT(round(price / (1 - 30 / 100), 0),0) as venta, products.stock, products.stock - sum(sales.quantity) as stockActual, sum(sales.quantity) AS sales, category FROM products LEFT JOIN sales ON products.id_product = sales.id_product GROUP BY products.id_product ORDER BY (products.reference +1) ASC;
-  `
+  const sql = `SELECT 
+    products.id_product, 
+    products.reference, 
+    products.description,
+    FORMAT(ROUND(price / (1 - 30 / 100), 0), 0) AS venta, 
+    products.stock,
+
+    COALESCE(products.stock * products.price - sum(sales.quantity * products.price), products.price * products.stock ) AS disponible,
+    
+    products.stock - COALESCE(SUM(sales.quantity), 0) AS stockActual, 
+    COALESCE(SUM(sales.quantity), 0) AS sales, 
+    category
+
+    FROM products 
+    LEFT JOIN sales ON products.id_product = sales.id_product 
+    GROUP BY products.id_product 
+    ORDER BY (products.reference + 1) ASC;
+    `
+
   connection.query(sql, (err, result) => {
     if (err) {
       console.log('Error al consultar el Stock: ' + err)
     } else {
       // console.log(result)
+      // res.send(result)
       res.render('stock', { stock: result })
     }
   })
@@ -125,7 +153,11 @@ const searchStock = (req, res) => {
 }
 
 const addUpdate = (req, res) => {
-  const sql = `UPDATE products SET stock = ${req.body.stock}, total = ${req.body.price * req.body.stock}, created = '${req.body.created}' WHERE products.reference = ${req.body.reference}`
+  const sql = `
+  UPDATE products SET stock = ${req.body.stock}, 
+  total = ${req.body.price * req.body.stock}, 
+  created = '${req.body.created}' 
+  WHERE products.reference = ${req.body.reference}`
 
   connection.query(sql, (err, result) => {
     if (err) {

@@ -12,8 +12,8 @@
 
 <body>
   <header id="header_container" class="header_container"></header>
+  <% let stockNowTotal=0; let stockOutTotal=0; let stockInTotal=0; let stockDisponibleTotal=0; %>
 
-  <% let stockNowTotal=0; let stockOutTotal=0; let stockInTotal=0; %>
     <h1 class="title_web">🗿 Stock actual</h1>
 
 
@@ -24,53 +24,44 @@
         <div class="title">Descripción del Producto</div>
         <div class="title">Venta</div>
         <div class="title">Stock</div>
+        <div class="title">Disponible</div>
         <div class="title">Vendidos</div>
         <div class="title">Inicial</div>
       </div>
-      <div class="data_container ">
+      <div class="data_container "> 
+
         <% stock.map( (indice)=> { %>
           <div class="stockSales">
-            <div class="data">
-              <%= indice.id_product %>
-            </div>
-            <div class="data">
-              <%= indice.reference %>
-            </div>
-            <div class="data">
-              <%= indice.description %>
-            </div>
-            <div class="data"> $  
-              <%= indice.venta %>
-            </div>
-            <div class="data"><strong>
-                <%= indice.stockActual %>
-              </strong>
-            </div>
+            <div class="data"><%= indice.id_product %></div>
+            <div class="data"><%= indice.reference %></div>
+            <div class="data"><%= indice.description %></div>
+            <div class="data"><%= indice.venta %></div>            
+            <div class="data"><strong><%= indice.stockActual %></strong></div>
             <% stockNowTotal +=indice.stockActual %>
-            <div class="data"> 
-              <%= indice.sales %>
-            </div>
+            <div class="data mil" style="font-weight: bold;"><%= indice.disponible %></div>
+            <% stockDisponibleTotal += indice.disponible %>
+            <div class="data"><%= indice.sales %></div>
               <% stockOutTotal +=indice.sales%>
-            <div class="data">
-              <%= indice.stock %>
-            </div>
-            <% stockInTotal +=indice.stock%>
+            <div class="data"><%= indice.stock %></div>
+              <% stockInTotal +=indice.stock%>
           </div>
-          <% }) %>
-            <div class="stockStyle">
-              <div>Totales: </div>
-              <div><strong> Stock: <%= stockInTotal - stockOutTotal %> vs <%= stockNowTotal %></strong></div>
-              <div>OutStock: <%= stockOutTotal %>
-              </div>
-              <div>InStock: <%=stockInTotal %>
-              </div>
-            </div>
+        <% }) %>
+
+          <div class="stockStyle">
+            <div>Totales: </div>
+            <div class="mil" style="font-weight: bold;"><%= stockDisponibleTotal %></div>
+            <div ><strong> Stock: <%= stockInTotal - stockOutTotal %></strong></div>
+            <div>OutStock: <%= stockOutTotal %></div>
+            <div>InStock: <%=stockInTotal %></div>
+          </div>
       </div>
     </section>
 
     <footer class="footer_container" id="footer_container"></footer>
 
     <script src="/js/index.js"></script>
+    <script src="/js/mil.js"></script>
+    <script src="/js/color.js"></script>
 
 </body>
 

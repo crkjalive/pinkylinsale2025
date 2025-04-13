@@ -16,14 +16,14 @@
 }
 .stockSales{
   display: grid;
-  grid-template-columns: 10% 10% 40% 10% 10% 10% 10%;
+  grid-template-columns: 10% 10% 30% 10% 10% 10% 10% 10%;
   justify-content: center;
   align-content: center;
 }
 .stockSales:hover{
   background-color: dodgerblue;
   color: white;
-  font-size: 1.1em;
+  font-size: 1.1em;stockSales
   padding: .2em 0;
 }
 

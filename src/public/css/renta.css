@@ -28,7 +28,6 @@
     align-items: center;
 }
 .renta{
-    border: 1px solid white;
     width: 30%;
     padding: .5em;
     border-radius: 5em;
@@ -38,7 +37,8 @@
 }
 
 .deep{
-    background-color: deeppink;
+    background-color: deeppink;  content: '$ ';
+  display: inline;
     color: white;
 }
 .lime{

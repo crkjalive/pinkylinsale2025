@@ -237,5 +237,10 @@ h2 {
 .pesos2::before{
   content: '$ ';
   display: inline;
-  color: rgb(2, 86, 196);
+  color: rgb(255, 255, 255);
+}
+.pesos3::before{
+  content: '$ ';
+  display: inline;
+  color: rgb(0, 0, 0);
 }
