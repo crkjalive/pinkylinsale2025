@@ -12,7 +12,7 @@
 
 <body>
   <header id="header_container" class="header_container"></header>
-  <% let stockNowTotal=0; let stockOutTotal=0; let stockInTotal=0; let stockDisponibleTotal=0; %>
+  <% let stockNowTotal=0; let stockOutTotal=0; let stockInTotal=0; let stockDisponibleTotal=0; let stockDisponibleTotalMas=0; %>
 
     <h1 class="title_web">🗿 Stock actual</h1>
 
@@ -40,6 +40,8 @@
             <% stockNowTotal +=indice.stockActual %>
             <div class="data mil" style="font-weight: bold;"><%= indice.disponible %></div>
             <% stockDisponibleTotal += indice.disponible %>
+            <% stockDisponibleTotalMas += indice.disponible /(1-30/100) %>
+
             <div class="data"><%= indice.sales %></div>
               <% stockOutTotal +=indice.sales%>
             <div class="data"><%= indice.stock %></div>
@@ -48,11 +50,13 @@
         <% }) %>
 
           <div class="stockStyle">
-            <div>Totales: </div>
+            <div>+30%: </div>
+            <div class="mil" style="font-weight: bold;"><%= stockDisponibleTotalMas %></div>
+            <div>Cost: </div>
             <div class="mil" style="font-weight: bold;"><%= stockDisponibleTotal %></div>
             <div ><strong> Stock: <%= stockInTotal - stockOutTotal %></strong></div>
             <div>OutStock: <%= stockOutTotal %></div>
-            <div>InStock: <%=stockInTotal %></div>
+            <div>InStock: <%= stockInTotal %></div>
           </div>
       </div>
     </section>

@@ -38,8 +38,17 @@ footer.innerHTML = `
 	<img src="/img/javascript.svg" />
 	<img src="/img/nodejs.svg" />
 </p>
-<p class="text1">App para registrar las ventas de <strong>Pinkylin Moda Intima</strong></p>
-<p class="text2">Creada por <strong>@CRKJ</strong> para Pinkylin Moda Intima 😎👍 ${parametros.anio}</p>
+
+<p class="text1" style="text-align:center">App para registrar las ventas de 
+	<strong> Pinkylin Moda Intima
+		<a target="_blank" class="crkj" href="https://www.instagram.com/pinkylin2020/">Instagram@pinkylin2020</a>
+	</strong>
+</p>
+
+<p class="text2" style="text-align:center">Creada por @crkjalive
+<strong><a target="_blank" class="crkj" href="http://www.instagram.com/crkjalive">Instagram</a></strong> 
+<strong><a target="_blank" class="crkj" href="https://www.tiktok.com/@crkjalive">Tiktok</a></strong> 
+ 😎👍 ${parametros.anio}</p>
 `;
 
 anio.textContent = parametros.anio
