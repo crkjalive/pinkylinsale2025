@@ -1,14 +1,3 @@
-@import url('./header.css');
-@import url('./sales.css');
-@import url('./gridSalesSeparado.css');
-@import url('./salesResults.css');
-@import url('./products.css');
-@import url('./footer.css');
-@import url('./total.css');
-@import url('./day.css');
-@import url('./renta.css');
-
-
 :root {
   --colorRojo: rgb(248, 32, 32);
   --colorAzul: dodgerblue;
@@ -22,83 +11,37 @@
   --colorNegro: rgb(28, 28, 28);
   font-style: italic;
 }
-*, input{
+
+*,
+input {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial';
-  outline: none;
+  font-family: 'Arial', sans-serif;
 }
-input:focus{
-  outline: none;
-  cursor: pointer;
-}
+
 body {
   background-color: var(--colorBlanco);
-  font-family: arial;
   width: 100%;
   height: 100%;
-  background-color: var(--colorBlanco);
 }
-section{
-  padding: .5em;
-  outline: none;
-}
-div{
-  text-align: center;
-}
-.formularioMonth{
+
+.formularioMonth {
   display: flex;
+  flex-direction: column; /* Cambiado a columna para mejor adaptación */
   padding: 0;
   cursor: pointer;
-}
-.formularioMonth input[type='submit']{
-  border: 0;
-  border-radius: 0;
 }
 
 form {
   max-width: 500px;
-  width: 100%;
+  width: 90%; /* Cambiado a porcentaje */
   margin: 0 auto;
   text-align: center;
   padding: 1em 0;
   background-color: var(--colorBlanco);
 }
-form a {
-  text-decoration: none;
-}
-.form_eliminar {
-  text-align: center;
-  justify-content: center;
-  display: grid;
-  grid-template-columns: 100%;
-}
-#btm-eliminar {
-  transition: all 500ms ease;
-  width: 40%;
-  background-color: var(--colorRojo);
-  margin: 0 auto;
-}
-#btm-eliminar:hover {
-  width: 100%;
-}
-#confirmacion {
-  margin: 0.5em auto;
-  padding: 1em;
-  background-color: var(--colorAzul);
-  transition: all 500ms ease;
-  background-color: var(--colorAzul);
-  width: 30%;
-  border-radius: 10px;
-  text-align: left;
-  text-decoration: none;
-  color: var(--colorBlanco);
-  text-decoration: none;
-}
-#confirmacion:hover {
-  width: 100%;
-}
+
 input {
   padding: 1em;
   border: none;
@@ -106,145 +49,44 @@ input {
   width: 100%;
   border: 1px solid var(--colorGris);
 }
+
 input[type="submit"] {
-  transition: all 500ms ease;
-  background-color: var(--colorAzul);
-  color: var(--colorBlanco);
   width: 50%;
   font-weight: 600;
   font-size: 1rem;
   border-radius: 10px;
-  font-family: arial;
-  cursor: pointer;
-  text-align: left;
-}
-input[type="submit"]:hover {
-  background-color: var(--colorAzul);
-  width: 100%;
-}
-h2 {
-  text-align: center;
-}
-.contenedor_btn {
-  width: 100%;
-  cursor: pointer;
-  padding: 0.8em 1em;
-  background-color: var(--colorDorado);
-  color: var(--colorBlanco);
-  text-align: center;
-}
-.contenedor_btn a {
-  text-decoration: none;
-  color: var(--colorNegro);
   cursor: pointer;
 }
-.title_web {
-  padding: 0.5em 0.5em 0.5em 1em;
-  color: var(--colorNegro);
-  background-color: var(--colorBlanco);
-  text-align: left;
-  font-size: 1rem;
-  color: var(--colorAzul);
-  text-transform: uppercase;
-  margin-top: 3.1em;
-}
-.containerbills{
+
+.containerbills {
   display: flex;
   flex-wrap: wrap;
   background-color: var(--colorGris);
   text-align: center;
   margin: 0 auto;
 }
-.containerbills .row{
-  padding: 1em;
-  border: 1px solid var(--colorBlanco);
-  text-align: center;
-}
-.section_container{
-  padding: 1em;
-  background-color: var(--colorAzul);
+
+.section_container .articles {
   display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-}
-.section_container .articles{
-  display: flex;
-  height: 150px;
-  width: 30%;
-  background-color: var(--colorDorado);
-  margin: 1em auto;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px var(--colorGrisOscuro);
-  border: 1px solid var(--colorBlanco);
-}
-.dod{
-  background-color: var(--colorAzul);
-}
-.red{
-  background-color: var(--colorRojo);
-}
-.selects{
-  width: 100%;
-  font-size: 16px;
-  padding: .5em 1em;
-  margin-top: .2em;
-  border: none;
-  border: 1px solid var(--colorAzul);
-  background-color: var(--colorAzul);
-  color: var(--colorBlanco);
-}
-.selects option{
-  background-color: var(--colorAzul);
-  color: var(--colorBlanco);
-  padding: .5em 0;
-  font-size: 1.2em;
-  text-align: center;
-}
-.selects:hover{
-  background-color: var(--colorAzul);
-  color: var(--colorBlanco);
-}
-.referenciaExistente{
-  text-align: center;
-  background-color: var(--colorRojo);
-}
-.letra{
-  font-size: 26px;
-  font-weight: 600;
+  flex-direction: column; /* Cambiado a columna para mejor adaptación */
+  height: auto; /* Cambiado a auto para adaptarse */
+  width: 100%; /* Cambiado a 100% para pantallas pequeñas */
+  margin: 1em 0; /* Ajustado margen */
 }
 
-.stockStyle{
-  display: flex;
-  justify-content: end;
-}
-.stockStyle div{
-  padding: .5em .5em 0 .5em ;
-  font-size: 1.2rem;
-}
-.justifi{
-  justify-content: space-between;
+/* Media Queries */
+@media (min-width: 600px) {
+  .section_container .articles {
+    width: 30%; /* Ancho para pantallas más grandes */
+  }
 }
 
-.pesos::before{
-  content: '$';
-  display: inline;
-  position: absolute;
-  padding-left: 1.5em;
-}
+@media (max-width: 600px) {
+  input[type="submit"] {
+    width: 100%; /* Botón ocupa todo el ancho en pantallas pequeñas */
+  }
 
-.pesos2::before{
-  content: '$ ';
-  display: inline;
-  color: rgb(255, 255, 255);
-}
-.pesos3::before{
-  content: '$ ';
-  display: inline;
-  color: rgb(0, 0, 0);
-}
-.crkj{
-  color: rgb(225, 248, 20);
-  text-decoration: none;
+  .formularioMonth {
+    flex-direction: column; /* Asegura que los elementos se apilen */
+  }
 }
