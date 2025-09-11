@@ -40,7 +40,7 @@
             <% stockNowTotal +=indice.stockActual %>
             <div class="data mil" style="font-weight: bold;"><%= indice.disponible %></div>
             <% stockDisponibleTotal += indice.disponible %>
-            <% stockDisponibleTotalMas += indice.disponible /(1-30/100) %>
+            <% stockDisponibleTotalMas += indice.disponible * 1.30 %>
 
             <div class="data"><%= indice.sales %></div>
               <% stockOutTotal +=indice.sales%>

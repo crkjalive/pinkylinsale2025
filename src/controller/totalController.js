@@ -9,7 +9,8 @@ const getTotal = (req, res) => {
   sum((sales.quantity * sales.unit_price) - (sales.quantity *products.price)) as utilidad,
   MONTHNAME(registered) AS mes 
   FROM sales NATURAL join products 
-  GROUP BY mes ORDER BY registered`
+  GROUP BY mes ORDER BY registered
+`
 
   connection.query(sql, (err, result) => {
     if (err) { console.log('Error al buscar: ' + err) }
@@ -28,3 +29,27 @@ const getTotal = (req, res) => {
 module.exports = {
   getTotal
 }
+
+/*
+SELECT 
+  sum(sales.quantity) AS cantidad,
+  sum(sales.quantity * sales.unit_price) AS total,
+  sum(sales.quantity * products.price) AS costo,
+  sum((sales.quantity * sales.unit_price) - (sales.quantity *products.price)) as utilidad,
+  MONTHNAME(registered) AS mes 
+  FROM sales NATURAL join products 
+  GROUP BY mes ORDER BY registered
+
+SELECT 
+  sum(sales.quantity) AS cantidad,
+  sum(sales.quantity * sales.unit_price) AS total,
+  sum(sales.quantity * products.price) AS costo,
+  sum((sales.quantity * sales.unit_price) - (sales.quantity * products.price)) as utilidad,
+  YEAR(registered) AS año,
+  WEEK(registered) AS semana
+FROM sales NATURAL join products 
+GROUP BY año, semana 
+ORDER BY año, semana
+
+
+*/
