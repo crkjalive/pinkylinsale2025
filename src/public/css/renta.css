@@ -32,13 +32,13 @@
     padding: .5em;
     border-radius: 5em;
     font-weight: bold;
-    background-color: rgb(29, 29, 29);
-    color: yellow;
+    background-color: deeppink;
+    color: black;
 }
 
 .deep{
     background-color: deeppink;  content: '$ ';
-  display: inline;
+    display: inline;
     color: white;
 }
 .lime{

@@ -17,7 +17,7 @@
 
   <section class="renta_nav_container">
 
-    <% let THERE=0; let KHRIZ=0; let TOTAL=0; let renta = 66000000 %>
+    <% let THERE=0; let KHRIZ=0; let TOTAL=0; let renta = 66000000; tope = 69718600 %>
 
     <div class="renta_nav_data">
       <% data.map( indice => { %>
@@ -52,13 +52,17 @@
     <div class="renta_nav_total">
 
       <% if (THERE < renta) { %> 
-       <div class="renta deep"> Renta There
+       <div class="renta lime"> Renta There
           <div class="mil pesos2"> <%= THERE %> </div>
           <div class="mil pesos2"> <%= -1 * (THERE - renta) %> </div>
+          <div class="mil pesos2"> <%= tope - THERE %> </div>
+
         </div>
       <% } else { %>
-        <div class="renta"> Renta There
+        <div class="renta deep"> Renta There
           <div class="mil pesos2"> <%= THERE %> </div>
+          <div class="mil pesos2"> <%= -1 * (THERE - renta) %> </div>
+          <div class="mil pesos2"> <%= tope - THERE %> </div>
         </div>
       <%}%>
         
@@ -66,17 +70,21 @@
         <div class="renta lime"> Renta Khriz
           <div class="mil pesos3"> <%= KHRIZ %> </div>
           <div class="mil pesos3"> <%= -1 * (KHRIZ - renta) %> </div>
+          <div class="mil pesos2"> <%= tope - KHRIZ %> </div>
+
         </div>
       <% } else { %>
         <div class="renta" > Renta Khriz
           <div class="mil pesos3"> <%= KHRIZ %> </div>
+          <div class="mil pesos3"> <%= -1 * (KHRIZ - renta) %> </div>
+          <div class="mil pesos2"> <%= tope - KHRIZ %> </div>          
         </div>
       <%}%>
 
       <div class="renta dodger" >
         <div class="mil pesos2" > <%= TOTAL %> </div>
         <div class="mil pesos2" > <%= renta %> </div>
-        <div class="mil pesos2" > <%= 69718600 %> </div>
+        <div class="mil pesos2" > <%= tope %> </div>
       </div>
     </div>
 

@@ -6,7 +6,7 @@ const getTotal = (req, res) => {
   sum(sales.quantity) AS cantidad,
   sum(sales.quantity * sales.unit_price) AS total,
   sum(sales.quantity * products.price) AS costo,
-  sum((sales.quantity * sales.unit_price) - (sales.quantity *products.price)) as utilidad,
+  sum((sales.quantity * sales.unit_price) - (sales.quantity * products.price)) as utilidad,
   MONTHNAME(registered) AS mes 
   FROM sales NATURAL join products 
   GROUP BY mes ORDER BY registered
